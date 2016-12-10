@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <list-show :lists="lists"></list-show>
+    <addlist :add="add"></addlist>
   </div>
 </template>
 
 <script>
 import ListShow from './components/ListShow'
+import Addlist from './components/Addlist'
 
 export default {
   name: 'app',
@@ -22,7 +24,18 @@ export default {
     }
   },
   components: {
-    ListShow
+    ListShow,
+    Addlist
+  },
+  methods: {
+    add (name, surname) {
+      var data = {
+        id: Date.now(),
+        name: name,
+        surname: surname
+      }
+      this.lists.push(data)
+    }
   }
 }
 </script>
