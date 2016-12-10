@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <list-show :lists="lists" :deletelist="deletelist"></list-show>
+    <list-show :lists="lists" :deletelist="deletelist" :edit-list="editList"></list-show>
     <addlist :add="add"></addlist>
   </div>
 </template>
@@ -13,16 +13,7 @@ export default {
   name: 'app',
   data () {
     return {
-      lists: [{
-        id: '1',
-        name: 'Wanvipa',
-        surname: 'Boonpiset'
-      },
-      {
-        id: '2',
-        name: 'eiei',
-        surname: 'eieiriri'
-      }]
+      lists: []
     }
   },
   components: {
@@ -41,6 +32,11 @@ export default {
     deletelist (id) {
       var index = this.lists.findIndex(list => list.id === id)
       this.lists.splice(index, 1)
+    },
+    editList (id, name, surname) {
+      var index = this.lists.findIndex(list => list.id === id)
+      this.lists[index].name = name
+      this.lists[index].surname = surname
     }
   }
 }
