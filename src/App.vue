@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <list-show :lists="lists"></list-show>
+    <list-show :lists="lists" :deletelist="deletelist"></list-show>
     <addlist :add="add"></addlist>
   </div>
 </template>
@@ -14,10 +14,12 @@ export default {
   data () {
     return {
       lists: [{
+        id: '1',
         name: 'Wanvipa',
         surname: 'Boonpiset'
       },
       {
+        id: '2',
         name: 'eiei',
         surname: 'eieiriri'
       }]
@@ -35,6 +37,10 @@ export default {
         surname: surname
       }
       this.lists.push(data)
+    },
+    deletelist (id) {
+      var index = this.lists.findIndex(list => list.id === id)
+      this.lists.splice(index, 1)
     }
   }
 }

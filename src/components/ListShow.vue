@@ -1,13 +1,13 @@
 <template lang="html">
 <div class="">
- <show v-for = "list in lists" :list="list"></show>
+ <show v-for = "list in lists" :list="list" :deletelist="deletelist"></show>
 </div>
 </template>
 
 <script>
 import show from './show'
 export default {
-  props: ['lists'],
+  props: ['lists', 'deletelist'],
   components: {
     show
   }
