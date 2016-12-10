@@ -4,11 +4,9 @@
     <addlist :add="add"></addlist>
   </div>
 </template>
-
 <script>
 import ListShow from './components/ListShow'
 import Addlist from './components/Addlist'
-
 export default {
   name: 'app',
   data () {

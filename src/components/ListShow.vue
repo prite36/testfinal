@@ -1,9 +1,8 @@
 <template lang="html">
-<div class="">
- <show v-for = "list in lists" :list="list" :deletelist="deletelist" :edit-list="editList"></show>
-</div>
+  <div class="">
+   <show v-for = "list in lists" :list="list" :deletelist="deletelist" :edit-list="editList"></show>
+  </div>
 </template>
-
 <script>
 import show from './show'
 export default {
@@ -13,6 +12,5 @@ export default {
   }
 }
 </script>
-
 <style lang="css">
 </style>
