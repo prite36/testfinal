@@ -2,7 +2,7 @@
 <div class="">
   name : <input type="text" v-model="name">
   surname : <input type="text" v-model="surname">
-  <button type="button" name="button" @click="addTo">add</button>
+  <button type="button" name="button" @click="addTo">add Name</button>
 </div>
 </template>
 
